@@ -1,0 +1,90 @@
+/* Estilo básico para quitar márgenes y paddings del navegador */
+body {
+  margin: 0; /* Quita el margen por defecto del navegador */
+  padding: 0; /* Quita el padding por defecto */
+  font-family: Arial, sans-serif; /* Fuente básica para todo el sitio */
+  background-color: #f4f4f4; /* Color de fondo claro */
+}
+
+/* Contenedor del menú principal: ocupa todo el ancho de la pantalla */
+.menuCSS3 {
+  width: 100%; /* El menú se expande a lo ancho de la página */
+  background-color: #F9B53C; /* Fondo del menú */
+}
+
+/* Estilo para la lista del menú principal */
+.menuCSS3 ul {
+  display: flex; /* Muestra los elementos del menú en línea horizontal */
+  padding: 0; /* Elimina padding de la lista */
+  margin: 0; /* Elimina margen de la lista */
+  list-style: none; /* Quita los puntos de lista */
+  justify-content: center; /* Centra los elementos del menú horizontalmente */
+}
+
+/* Estilo para los enlaces del menú */
+.menuCSS3 a {
+  display: block; /* Hace que el enlace ocupe todo el bloque */
+  padding: 1em 2em; /* Espaciado interno (vertical y horizontal) */
+  background-color: #F9B53C; /* Color de fondo del enlace */
+  text-decoration: none; /* Quita subrayado de los enlaces */
+  color: #191C26; /* Color del texto */
+  transition: background-color 0.3s; /* Transición suave al pasar el mouse */
+}
+
+/* Cambio de color al pasar el mouse sobre el enlace */
+.menuCSS3 a:hover {
+  background-color: #8d9edd; /* Color de fondo al hacer hover */
+}
+
+/* Cada elemento del menú puede tener submenús */
+.menuCSS3 ul li {
+  position: relative; /* Necesario para que el submenú se posicione respecto a este */
+}
+
+/* Submenú oculto inicialmente */
+.menuCSS3 ul li ul {
+  display: none; /* No se muestra hasta que se haga hover */
+  position: absolute; /* Se posiciona sobre el menú principal */
+  top: 100%; /* Aparece justo debajo del ítem padre */
+  padding: 0; /* Elimina padding del submenú */
+  list-style: none; /* Sin puntos de lista */
+  background-color: #F9B53C; /* Mismo fondo que el menú principal */
+  min-width: 100%; /* Mismo ancho que el botón padre */
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+  left: 50%; /* Posición central respecto al botón padre */
+  transform: translateX(-50%); /* Desplaza el submenú hacia la izquierda para centrarlo */
+}
+
+/* Mostrar submenú cuando se hace hover sobre el ítem */
+.menuCSS3 ul li:hover ul {
+  display: block; /* Se muestra el submenú */
+}
+
+/* Estilo para los enlaces dentro del submenú */
+.menuCSS3 ul li ul li a {
+  padding: 1em; /* Espaciado interno en el submenú */
+  text-align: center; /* Centra el texto dentro de cada opción del submenú */
+}
+
+@media (max-widhth:78px){
+
+ .menuCSS3{
+  flex-direction:column;/*Cambia la dirrecion del menu a columna*/
+ }
+ .menuCSS3 ul li {
+  width:100%;/*Asegura que cada elemento ocupe el 100% del ancho*/
+ }
+ .menuCSS3 a {
+  padding:1em; /*Mantiene el tamaño adecuado*/
+  text-align: center;/*Centra el texto en los elementos del menu*/
+ }
+ /*Hacer que el submenu sea mas accesible en moviles*/
+ .menuCSS3 ul li ul{
+  position: static;/*Cambia la posicion para que el submenu se muestre debado del elemento principal*/
+  display: none;
+ }
+ .menuCSS3 ul li:hover ul{
+  display: block;/* Muestra el submenu al hacer hover en moviles*/
+ }
+ 
+}
